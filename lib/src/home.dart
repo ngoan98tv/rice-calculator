@@ -41,45 +41,30 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: <Widget>[
-            Preview(values: this._store),
-            Container(
-              margin: EdgeInsets.all(12),
-              child: Display(
-                value: _input,
-                onBackspace: this.handleBackSpace,
-              ),
-            ),
-            Expanded(
-              child: Row(
-                children: <Widget>[
-                  Expanded(
-                    child: KeyBoard(onClick: this.handleClick),
-                  )
-                ],
-              ),
-            ),
-          ],
-        ),
+      appBar: AppBar(
+        title: Text("Máy tính chuyên dụng"),
       ),
-      bottomNavigationBar: BottomAppBar(
-        color: Colors.amber,
-        child: BottomNavigationBar(
-          items: [
-            BottomNavigationBarItem(
-              icon: Icon(Icons.beach_access),
-              title: Text('data')
+        body: SafeArea(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: <Widget>[
+          Expanded(child: Preview(values: this._store)),
+          Container(
+            margin: EdgeInsets.all(12),
+            child: Display(
+              value: _input,
+              onBackspace: this.handleBackSpace,
             ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.beach_access),
-              title: Text('data')
-            )
-          ],
-        )
+          ),
+          Row(
+            children: <Widget>[
+              Expanded(
+                child: KeyBoard(onClick: this.handleClick),
+              )
+            ],
+          ),
+        ],
       ),
-    );
+    ));
   }
 }

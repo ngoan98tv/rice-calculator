@@ -9,10 +9,7 @@ class Display extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        height: 42.0,
-        decoration: BoxDecoration(
-            color: Colors.white70),
-        margin: EdgeInsets.fromLTRB(0, 0, 6, 0),
+        decoration: BoxDecoration(color: Colors.white70),
         child: Row(
           children: <Widget>[
             Expanded(
@@ -22,8 +19,9 @@ class Display extends StatelessWidget {
                 maxLines: 1,
                 style: TextStyle(
                   color: Colors.black,
-                  fontSize: 28,
+                  fontSize: 32,
                   fontFamily: 'monospace',
+                  fontWeight: FontWeight.w600
                 ),
               ),
             ),
